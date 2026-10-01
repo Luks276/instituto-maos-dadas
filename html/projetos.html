@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configuração inicial da página de projetos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="module" src="../js/script.js"></script>
+    <title>Nossos Projetos</title>
+</head>
+<body>
+    <!-- Cabeçalho com logo e navegação -->
+    <header>
+        <div class="logo">🤝 Instituto Mãos Dadas</div>
+        <nav aria-label="Menu principal">
+            <a href="inicio.html">Início</a>
+            <a href="projetos.html" class="ativo">Projetos</a>
+            <a href="cadastro.html">Cadastre-se</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Introdução da página de projetos -->
+        <section class="hero-pagina">
+            <span class="etiqueta">Nossas ações</span>
+            <h1>Nossos Projetos</h1>
+            <p>Conheça as iniciativas que transformam vidas e promovem o desenvolvimento sustentável e educacional na nossa comunidade.</p>
+        </section>
+
+        <!-- Grade com os principais projetos da ONG -->
+        <section class="grade-projetos" data-project-list aria-label="Projetos do Instituto"></section>
+
+        <template id="project-card-template">
+            <article class="card-projeto">
+                <span class="tag-projeto" data-category></span>
+                <h2 data-title></h2>
+                <p data-description></p>
+                <ul>
+                    <li><strong>Público-alvo:</strong> <span data-audience></span></li>
+                    <li><strong>Frequência:</strong> <span data-frequency></span></li>
+                </ul>
+            </article>
+        </template>
+
+        <!-- Chamada para participação em projetos -->
+        <section class="painel-chamada">
+            <h2>Quer fazer parte destas iniciativas?</h2>
+            <p>Você pode ajudar o Instituto Mãos Dadas a expandir o nosso impacto como voluntário ou apoiador.</p>
+            <a class="botao" href="cadastro.html">Quero Participar</a>
+        </section>
+    </main>
+
+    <!-- Rodapé final -->
+    <footer>
+        <div class="direitos">
+            <p>&copy; 2026 Instituto Mãos Dadas</p>
+        </div>
+
+        <div class="contato">
+            <h3>Contato:</h3>
+            <p>Telefone: (31)99999-9999</p>
+            <p>Email: contato@maosdadas.org</p>
+        </div>
+
+        <div class="social">
+            <h3>Redes Sociais:</h3>
+            <div class="redes">
+                <img src="../imagens/instagram.png" alt="Instagram">
+                <img src="../imagens/facebook.png" alt="Facebook">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

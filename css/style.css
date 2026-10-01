@@ -1,0 +1,560 @@
+/*
+  -----------------------------
+  BASE DO SITE
+  -----------------------------
+  Aqui ficam as variáveis, resets e estilos globais.
+*/
+
+:root {
+    --verde-escuro: #164e63;
+    --verde-medio: #2d7a78;
+    --verde-claro: #dff5f2;
+    --amarelo: #f7b955;
+    --fundo: #f7f4ee;
+    --fundo-card: #ffffff;
+    --texto: #1d2a2e;
+    --texto-suave: #5d676b;
+    --borda: #dfe8e5;
+    --sombra: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #f8f5f0 0%, #edf8f4 100%);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*
+  -----------------------------
+  CABEÇALHO E NAVEGAÇÃO
+  -----------------------------
+*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid var(--borda);
+}
+
+.route-status {
+    margin: 0;
+    padding: 10px 20px;
+    background: #fff0ed;
+    color: #b42318;
+    text-align: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--verde-escuro);
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: bold;
+    color: var(--texto-suave);
+}
+
+nav a:hover,
+nav a.ativo {
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+}
+
+/*
+  -----------------------------
+  ESTRUTURA GERAL
+  -----------------------------
+*/
+
+main {
+    flex: 1;
+    width: 1100px;
+    max-width: calc(100% - 30px);
+    margin: 0 auto;
+    padding: 30px 0 50px;
+}
+
+/*
+  -----------------------------
+  BANNER / HERO
+  -----------------------------
+*/
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 30px 0;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: var(--verde-escuro);
+    margin-bottom: 15px;
+}
+
+.banner p {
+    color: var(--texto-suave);
+    font-size: 1.05rem;
+}
+
+.texto-banner,
+.imagem-banner {
+    flex: 1;
+}
+
+.acoes-banner {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+/*
+  -----------------------------
+  BOTÕES DE AÇÃO
+  -----------------------------
+  Todo botão ou link de chamada principal usa essa classe.
+*/
+
+a.botao,
+button.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 22px;
+    border-radius: 14px;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--verde-medio), var(--verde-escuro));
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(22, 78, 99, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.botao:hover,
+button.botao:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 24px rgba(22, 78, 99, 0.18);
+}
+
+.imagem-banner img {
+    width: 100%;
+    max-width: 520px;
+    min-height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px var(--sombra);
+}
+
+/*
+  -----------------------------
+  CARDS E BLOCOS VISUAIS
+  -----------------------------
+*/
+
+.cartao,
+.card-projeto,
+.card-valor,
+.item-impacto,
+.painel-chamada,
+.formulario-cadastro,
+.secao-formulario,
+.citacao {
+    background: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: 22px;
+    box-shadow: 0 10px 25px var(--sombra);
+}
+
+.cartao,
+.painel-chamada,
+.secao-formulario,
+.citacao {
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.titulo-secao {
+    margin-bottom: 20px;
+}
+
+.valores,
+.impacto,
+.depoimentos {
+    margin-top: 30px;
+}
+
+.titulo-secao.centralizado {
+    text-align: center;
+}
+
+.titulo-secao h2 {
+    color: var(--verde-escuro);
+    font-size: 2rem;
+    margin-top: 8px;
+}
+
+.texto-historia {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.texto-historia p {
+    flex: 1 1 300px;
+    color: var(--texto-suave);
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.grade-cards,
+.grade-impacto,
+.grade-projetos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card-valor,
+.card-projeto {
+    flex: 1 1 260px;
+    padding: 22px;
+}
+
+.card-valor h3,
+.card-projeto h2 {
+    color: var(--verde-escuro);
+    margin-bottom: 10px;
+}
+
+.card-valor p,
+.card-projeto p,
+.painel-chamada p,
+.introducao-formulario p,
+.hero-pagina p {
+    color: var(--texto-suave);
+}
+
+.item-impacto {
+    flex: 1 1 220px;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.item-impacto strong {
+    display: block;
+    font-size: 2.3rem;
+    color: var(--verde-escuro);
+}
+
+.hero-pagina {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.hero-pagina h1 {
+    color: var(--verde-escuro);
+    font-size: 2.6rem;
+    margin-top: 10px;
+}
+
+.tag-projeto {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-projeto ul {
+    margin-top: 15px;
+    list-style: none;
+}
+
+.card-projeto li {
+    margin-bottom: 8px;
+    padding-left: 14px;
+    position: relative;
+    color: var(--texto-suave);
+}
+
+.card-projeto li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--amarelo);
+    font-size: 1.3rem;
+}
+
+/*
+  -----------------------------
+  PAINEL DE CHAMADA
+  -----------------------------
+*/
+
+.painel-chamada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    background: linear-gradient(135deg, rgba(45, 122, 120, 0.08), rgba(247, 185, 85, 0.12));
+}
+
+.painel-chamada h2 {
+    color: var(--verde-escuro);
+    margin-bottom: 10px;
+}
+
+/*
+  -----------------------------
+  FORMULÁRIO
+  -----------------------------
+*/
+
+.secao-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.introducao-formulario {
+    text-align: center;
+}
+
+.introducao-formulario h1 {
+    color: var(--verde-escuro);
+    font-size: 2.5rem;
+    margin-top: 8px;
+}
+
+.formulario-cadastro {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulario-cadastro fieldset {
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario-cadastro legend {
+    padding: 0 8px;
+    color: var(--verde-escuro);
+    font-weight: bold;
+}
+
+.formulario-cadastro label {
+    font-weight: bold;
+    color: var(--texto);
+}
+
+.formulario-cadastro input,
+.formulario-cadastro select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    font-size: 1rem;
+    background: #f9fbfb;
+}
+
+.formulario-cadastro input[aria-invalid="true"],
+.formulario-cadastro select[aria-invalid="true"] {
+    border-color: #b42318;
+}
+
+.mensagem-erro {
+    color: #b42318;
+    font-size: 0.875rem;
+}
+
+.mensagem-erro:empty {
+    display: none;
+}
+
+.formulario-status {
+    color: var(--verde-escuro);
+    font-weight: bold;
+    text-align: center;
+}
+
+.formulario-status:empty {
+    display: none;
+}
+
+.formulario-historico {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.formulario-historico:empty {
+    display: none;
+}
+
+.opcao-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f9fbfb;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 12px 14px;
+}
+
+.opcao-radio input {
+    width: auto;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    align-self: center;
+}
+
+/*
+  -----------------------------
+  RODAPÉ
+  -----------------------------
+*/
+
+footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #163a45;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 22px 15px;
+    margin-top: 20px;
+}
+
+.direitos,
+.contato,
+.social {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    padding-left: 10px
+}
+
+.direitos{
+    border-left: none;
+    padding-left: 0;
+}
+
+.social {
+    gap: 5px;
+}
+
+.redes {
+    display: flex;
+    gap: 8px;
+}
+
+.redes img {
+    margin-left: 15px;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+
+
+/*
+  -----------------------------
+  RESPONSIVIDADE
+  -----------------------------
+*/
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 20px;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .acoes-banner {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        justify-content: center;
+    }
+
+    nav a {
+        text-align: center;
+    }
+
+    .banner h1,
+    .hero-pagina h1,
+    .introducao-formulario h1 {
+        font-size: 2rem;
+    }
+
+    .secao-formulario {
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        justify-content: center;
+    }
+}
