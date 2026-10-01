@@ -23,6 +23,7 @@ export function initRouter(onRouteRendered) {
 			const renderedMain = nextMain.cloneNode(true);
 			onRouteRendered(renderedMain);
 			currentMain.replaceChildren(...renderedMain.childNodes);
+			currentMain.querySelector("h1")?.focus();
 			document.title = page.title;
 			if (addHistory) history.pushState({}, "", url);
 			activeUrl = new URL(url.href);

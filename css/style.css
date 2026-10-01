@@ -6,6 +6,7 @@
 */
 
 :root {
+    color-scheme: light;
     --verde-escuro: #164e63;
     --verde-medio: #2d7a78;
     --verde-claro: #dff5f2;
@@ -16,6 +17,20 @@
     --texto-suave: #5d676b;
     --borda: #dfe8e5;
     --sombra: rgba(0, 0, 0, 0.08);
+    --fundo-inicio: #f8f5f0;
+    --fundo-fim: #edf8f4;
+    --cabecalho: rgba(255, 255, 255, 0.9);
+    --fundo-controle: #f9fbfb;
+    --foco: #075985;
+    --erro: #b42318;
+    --fundo-erro: #fff0ed;
+    --botao-inicio: #2d7a78;
+    --botao-fim: #164e63;
+    --rodape: #163a45;
+    --texto-rodape: #f1f5f6;
+    --borda-rodape: rgba(255, 255, 255, 0.45);
+    --painel-inicio: rgba(45, 122, 120, 0.08);
+    --painel-fim: rgba(247, 185, 85, 0.12);
 }
 
 * {
@@ -29,7 +44,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(180deg, #f8f5f0 0%, #edf8f4 100%);
+    background: linear-gradient(180deg, var(--fundo-inicio) 0%, var(--fundo-fim) 100%);
     color: var(--texto);
     line-height: 1.6;
 }
@@ -50,15 +65,15 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 18px 40px;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--cabecalho);
     border-bottom: 1px solid var(--borda);
 }
 
 .route-status {
     margin: 0;
     padding: 10px 20px;
-    background: #fff0ed;
-    color: #b42318;
+    background: var(--fundo-erro);
+    color: var(--erro);
     text-align: center;
 }
 
@@ -72,6 +87,36 @@ nav {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+h1:focus-visible {
+    outline: 3px solid var(--foco);
+    outline-offset: 3px;
+}
+
+h1:focus {
+    outline: 3px solid var(--foco);
+    outline-offset: 3px;
+}
+
+.skip-link {
+    position: absolute;
+    z-index: 10;
+    top: 8px;
+    left: 8px;
+    padding: 10px 14px;
+    transform: translateY(-160%);
+    background: var(--fundo-card);
+    color: var(--verde-escuro);
+    border: 2px solid var(--foco);
+}
+
+.skip-link:focus-visible {
+    transform: translateY(0);
 }
 
 nav a {
@@ -154,7 +199,7 @@ button.botao {
     padding: 14px 22px;
     border-radius: 14px;
     font-weight: bold;
-    background: linear-gradient(135deg, var(--verde-medio), var(--verde-escuro));
+    background: linear-gradient(135deg, var(--botao-inicio), var(--botao-fim));
     color: #fff;
     box-shadow: 0 10px 20px rgba(22, 78, 99, 0.15);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -339,7 +384,7 @@ button.botao:hover {
     flex-direction: column;
     align-items: center;
     gap: 18px;
-    background: linear-gradient(135deg, rgba(45, 122, 120, 0.08), rgba(247, 185, 85, 0.12));
+    background: linear-gradient(135deg, var(--painel-inicio), var(--painel-fim));
 }
 
 .painel-chamada h2 {
@@ -403,16 +448,16 @@ button.botao:hover {
     border: 1px solid var(--borda);
     border-radius: 12px;
     font-size: 1rem;
-    background: #f9fbfb;
+    background: var(--fundo-controle);
 }
 
 .formulario-cadastro input[aria-invalid="true"],
 .formulario-cadastro select[aria-invalid="true"] {
-    border-color: #b42318;
+    border-color: var(--erro);
 }
 
 .mensagem-erro {
-    color: #b42318;
+    color: var(--erro);
     font-size: 0.875rem;
 }
 
@@ -444,7 +489,7 @@ button.botao:hover {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: #f9fbfb;
+    background: var(--fundo-controle);
     border: 1px solid var(--borda);
     border-radius: 12px;
     padding: 12px 14px;
@@ -473,8 +518,8 @@ footer {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
-    background: #163a45;
-    color: rgba(255, 255, 255, 0.8);
+    background: var(--rodape);
+    color: var(--texto-rodape);
     padding: 22px 15px;
     margin-top: 20px;
 }
@@ -484,7 +529,7 @@ footer {
 .social {
     display: flex;
     flex-direction: column;
-    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    border-left: 1px solid var(--borda-rodape);
     padding-left: 10px
 }
 
@@ -556,5 +601,141 @@ footer {
     }
     input{
         justify-content: center;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --verde-escuro: #b9e5eb;
+        --verde-claro: #234148;
+        --fundo: #111a1f;
+        --fundo-card: #1c292f;
+        --texto: #f1f5f6;
+        --texto-suave: #cfdbde;
+        --borda: #53636a;
+        --sombra: rgba(0, 0, 0, 0.35);
+        --fundo-inicio: #10191e;
+        --fundo-fim: #172329;
+        --cabecalho: #172329;
+        --fundo-controle: #10191e;
+        --foco: #f5d76e;
+        --erro: #ffb4ab;
+        --fundo-erro: #3b1e1b;
+        --rodape: #0c1418;
+        --texto-rodape: #f1f5f6;
+        --borda-rodape: #718087;
+        --painel-inicio: rgba(82, 170, 160, 0.16);
+        --painel-fim: rgba(247, 185, 85, 0.08);
+    }
+}
+
+@media (prefers-contrast: more) {
+    :root {
+        --verde-escuro: #123c4b;
+        --verde-medio: #165e5b;
+        --verde-claro: #e3f2ef;
+        --texto: #111820;
+        --texto-suave: #303b43;
+        --borda: #59656c;
+        --foco: #003e75;
+        --erro: #9e1b12;
+        --fundo-erro: #fff0ed;
+        --fundo-controle: #ffffff;
+        --botao-inicio: #17615d;
+        --botao-fim: #103f52;
+        --painel-inicio: #ffffff;
+        --painel-fim: #ffffff;
+    }
+}
+
+@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    :root {
+        --verde-escuro: #d4f3f5;
+        --verde-claro: #1b363b;
+        --texto: #ffffff;
+        --texto-suave: #f0f4f5;
+        --borda: #b4c0c5;
+        --foco: #ffe16b;
+        --erro: #ffd0ca;
+        --fundo-erro: #511c18;
+        --fundo-controle: #101518;
+        --painel-inicio: #11191d;
+        --painel-fim: #11191d;
+    }
+}
+
+@media (forced-colors: active) {
+    body {
+        background: Canvas;
+        color: CanvasText;
+    }
+
+    header,
+    .cartao,
+    .card-projeto,
+    .card-valor,
+    .item-impacto,
+    .painel-chamada,
+    .formulario-cadastro,
+    .secao-formulario,
+    .citacao,
+    footer {
+        background: Canvas;
+        color: CanvasText;
+        border: 1px solid CanvasText;
+        box-shadow: none;
+    }
+
+    a,
+    nav a,
+    .logo,
+    .banner h1,
+    .titulo-secao h2,
+    .card-valor h3,
+    .card-projeto h2,
+    .item-impacto strong,
+    .hero-pagina h1,
+    .painel-chamada h2,
+    .introducao-formulario h1,
+    .formulario-cadastro legend {
+        color: LinkText;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    h1:focus {
+        outline: 3px solid Highlight;
+        outline-offset: 3px;
+    }
+
+    a.botao,
+    button.botao {
+        background: ButtonFace;
+        color: ButtonText;
+        border: 1px solid ButtonText;
+        box-shadow: none;
+    }
+
+    .route-status,
+    .mensagem-erro,
+    .formulario-status,
+    .formulario-historico {
+        background: Canvas;
+        color: CanvasText;
+        border: 1px solid CanvasText;
+    }
+
+    .tag-projeto,
+    .etiqueta,
+    .opcao-radio,
+    .formulario-cadastro input,
+    .formulario-cadastro select {
+        background: Canvas;
+        color: CanvasText;
+        border: 1px solid CanvasText;
     }
 }
