@@ -4,6 +4,8 @@ As versões seguem o formato SemVer `MAJOR.MINOR.PATCH`: `MAJOR` para mudanças 
 
 ## Não lançado
 
+- Adicionado Vite para desenvolvimento local e build multipágina de produção.
+- Preparado workflow de GitHub Actions para build e deploy de releases no GitHub Pages.
 - Próximas alterações serão registradas aqui antes de uma nova release.
 
 ## [0.1.0] - 2026-10-01
